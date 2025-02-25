@@ -63,33 +63,14 @@ function FormProduto() {
 
 	function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
 		
-        /**
-         * Através de uma Desestruturação, guardamos as propriedades type, value, name
-         * do input que disparou o evento change em constantes
-         */
         const { type, value, name } = e.target
 
-        /**
-         * Atribuímos o valor (value) do input na variável valor
-         */
 		let valor: string | number = value
 
-        /**
-         * Checamos se o tipo do input é number ou range ou se ao converter o valor para 
-         * number ele não retorna NaN - Not a Number (não é um numero) e checamos se o 
-         * valor é diferente de vazio
-         * 
-         * Se as condições acimas forem satisfeitas, significa que temos um numero, logo 
-         * precisamos converter para um numero do tipo float, com 2 casas decimais, 
-         * porque o único campo do tipo number do fomulário é o preço.
-         */
 		if (['number', 'range'].includes(type) || (!isNaN(Number(value)) && value !== '')) {
 			valor = parseFloat(Number(value).toFixed(2))
 		}
 
-        /**
-         * Na sequência, atualizamos o Estado Produto
-         */
 		setProduto({
 			...produto,
 			[name]: valor,
