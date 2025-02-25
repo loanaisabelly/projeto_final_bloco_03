@@ -1,35 +1,37 @@
+import ListarProdutos from "../../components/produtos/listarprodutos/Listarprodutos"
+import ModalProduto from "../../components/produtos/modalprodutos/ModalProdutos"
 
 function Home() {
     return (
         <>
-            <div className=" bg-slate-800 flex justify-center">
-                <div className='container grid grid-cols-2 text-white'>
+            <div className=" bg-slate-50 flex justify-center">
+                <div className='container grid grid-cols-2 text'>
                     <div className="flex flex-col gap-4 items-center justify-center py-4">
                         <h2 className='text-5xl font-bold'>
-                            Farmacia Vai uma Dose?
+                            Farmácia Vai uma Dose?
                         </h2>
                         <p className='text-xl'>
                             Os Melhores Preços e Produtos
                         </p>
 
                         <div className="flex justify-around gap-4">
-                            <div className='rounded text-white 
-                                            border-white border-solid border-2 py-2 px-4'
+                            <div className='rounded text-slate-800 '
                                 >
-                                Novo Produto
+                                 <ModalProduto />
                             </div>
                         </div>
                     </div>
 
                     <div className="flex justify-center ">
                         <img
-                              src="https://ik.imagekit.io/23lwgdahj/home.webp?updatedAt=1740490212783"
+                              src="https://ik.imagekit.io/23lwgdahj/16312666.gif?updatedAt=1740493686091"
                               alt="Imagem Página Home"
-                              className="w-2/3"
+                              className="w-2/3 rounded-full"
                         />
                     </div>
                 </div>
             </div>
+            <ListarProdutos />
         </>
     )
 }
